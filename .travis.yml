@@ -5,6 +5,9 @@ node_js:
 services:
   - docker
 
+script:
+  - yarn build
+
 deploy:
   provider: script
   script: bash scripts/publish_dockerhub.sh $TRAVIS_TAG
