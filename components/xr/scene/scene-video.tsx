@@ -3,8 +3,6 @@ import React from 'react'
 import { Scene } from 'aframe-react'
 import Assets from './assets'
 import Video360 from '../video360/Video360Room'
-import getConfig from 'next/config'
-const config = getConfig().publicRuntimeConfig.xr['networked-scene']
 import './index.scss'
 
 type State = {
