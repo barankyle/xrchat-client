@@ -14,8 +14,9 @@ import Avatar from '@material-ui/core/Avatar'
 
 interface XProps {
   avatar: any,
-  parentProps: any,
-  avatarLetter: string
+  avatarLetter: string,
+  auth: any,
+  logoutUser: any
 }
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -53,7 +54,7 @@ const MenuListComposition: React.FC<XProps> = (props: XProps) => {
     setOpen(false)
   }
   const handleLogout = () => {
-    props.parentProps.logoutUser()
+    props.logoutUser()
     setOpen(false)
   }
 
@@ -62,6 +63,10 @@ const MenuListComposition: React.FC<XProps> = (props: XProps) => {
       event.preventDefault()
       setOpen(false)
     }
+  }
+
+  const handleSubscription = () => {
+    Router.push('/subscription/signup')
   }
 
   const handleContacts = () => {
@@ -117,6 +122,7 @@ const MenuListComposition: React.FC<XProps> = (props: XProps) => {
                     onKeyDown={handleListKeyDown}
                   >
                     <MenuItem onClick={handleModal}>Profile</MenuItem>
+                    { props.auth.get('user').subscription == null && <MenuItem onClick={handleSubscription}>Subscribe</MenuItem>}
                     <MenuItem onClick={handleContacts}>Contacts</MenuItem>
                     <MenuItem onClick={handleLogout}>Logout</MenuItem>
                   </MenuList>
@@ -130,6 +136,7 @@ const MenuListComposition: React.FC<XProps> = (props: XProps) => {
         open={modalOpen}
         handleClose={modalClose}
         avatar={props.avatar}
+        auth={props.auth}
       />
     </div>
   )
