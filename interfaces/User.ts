@@ -8,7 +8,8 @@ export type User = {
   identityProviders: IdentityProvider[]
   relationType?: RelationshipType
   inverseRelationType?: RelationshipType,
-  subscriptions: any[]
+  subscriptions: any[],
+  subscription: any
 }
 
 export const UserSeed = {

@@ -51,9 +51,10 @@ class AuthMagicLink extends Component<Props> {
 
     const type = router.query.type as string
     const token = router.query.token as string
+    const subscriptionId = router.query.subscriptionId as string
 
     if (type === 'login') {
-      this.props.loginUserByJwt(token, '/', '#')
+      this.props.loginUserByJwt(token, '/', '#', subscriptionId)
     } else if (type === 'connection') {
       const user = this.props.auth.get('user') as User
       if (user) {

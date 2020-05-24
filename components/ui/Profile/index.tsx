@@ -43,7 +43,6 @@ const TabPanel = (props: any) => {
 const ProfileModal: React.FC<MProps> = (props: MProps) => {
   const classes = useStyles()
   const [tabIndex, setTabIndex] = React.useState(0)
-  const authUser = props.auth.get('user')
 
   const handleChange = (event: any, newValue: number) => {
     event.preventDefault()
