@@ -140,7 +140,7 @@ export function loginUserByFacebook () {
   }
 }
 
-export function loginUserByJwt (accessToken: string, redirectSuccess: string, redirectError: string, subscriptionId: string): any {
+export function loginUserByJwt (accessToken: string, redirectSuccess: string, redirectError: string, subscriptionId?: string): any {
   return (dispatch: Dispatch) => {
     dispatch(actionProcessing(true))
 
@@ -153,7 +153,7 @@ export function loginUserByJwt (accessToken: string, redirectSuccess: string, re
         console.log('LOGIN BY JWT AUTHUSER')
         console.log(authUser)
 
-        if (subscriptionId.length > 0) {
+        if (subscriptionId != null && subscriptionId.length > 0) {
           client.service('seat').patch(authUser.identityProvider.userId, {
             subscriptionId: subscriptionId
           })
@@ -223,7 +223,7 @@ export function verifyEmail (token: string) {
     })
       .then((res: any) => {
         dispatch(didVerifyEmail(true))
-        loginUserByJwt(res.accessToken, '/', '/', '')(dispatch)
+        loginUserByJwt(res.accessToken, '/', '/')(dispatch)
       })
       .catch((err: any) => {
         console.log(err)

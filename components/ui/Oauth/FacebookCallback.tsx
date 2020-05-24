@@ -43,7 +43,7 @@ class FacebookCallback extends Component<Props> {
         const user = this.props.auth.get('user')
         this.props.refreshConnections(user.id)
       } else {
-        this.props.loginUserByJwt(token, '/', '/', '')
+        this.props.loginUserByJwt(token, '/', '/')
       }
     }
 
