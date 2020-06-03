@@ -1,0 +1,11 @@
+mutation getUserInstances($id: String!) {
+    getUserInstance (id: $id ) {
+      id,
+      name,
+      position {
+        x,
+        y,
+        z
+      }
+    }
+}

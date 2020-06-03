@@ -1,0 +1,11 @@
+mutation addUserInstance($id: String!, $name: String!, $position: InstanceUserPositionInput) {
+    addUserInstance (id: $id, name: $name, position: $position) {
+      id,
+      name,
+      position {
+        x,
+        y,
+        z
+      }
+    }
+}

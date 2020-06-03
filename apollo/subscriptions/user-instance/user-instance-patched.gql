@@ -1,0 +1,11 @@
+subscription {
+  userInstancePatched {
+    id,
+    name,
+    position {
+      x,
+      y
+      z
+    }
+  }
+}

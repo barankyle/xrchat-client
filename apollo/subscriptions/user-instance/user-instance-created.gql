@@ -1,0 +1,11 @@
+subscription {
+  userInstanceCreated {
+    id,
+    name,
+    position {
+      x,
+      y
+      z
+    }
+  }
+}
