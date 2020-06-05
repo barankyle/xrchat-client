@@ -1,0 +1,6 @@
+mutation patchComponentInstance ( $id: String!, $data: String) {
+  patchComponentInstance(id: $id, data: $data) {
+    id,
+    data
+  }
+}

@@ -8,8 +8,6 @@ import userInstanceCreated from '../apollo/subscriptions/user-instance/user-inst
 import userInstancePatched from '../apollo/subscriptions/user-instance/user-instance-patched.gql'
 
 async function main(authUser) {
-  console.log('PANTS')
-
   const httpLink = new HttpLink({
     uri: 'http://localhost:3030/graphql'
   })

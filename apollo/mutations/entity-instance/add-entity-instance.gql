@@ -1,0 +1,6 @@
+mutation addEntityInstance($id: String!, $name: String) {
+    addEntityInstance (id: $id, name: $name) {
+      id,
+      name
+    }
+}

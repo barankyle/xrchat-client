@@ -1,0 +1,6 @@
+mutation addComponentInstance($id: String!, $data: String) {
+    addComponentInstance (id: $id, data: $data) {
+      id,
+      data
+    }
+}

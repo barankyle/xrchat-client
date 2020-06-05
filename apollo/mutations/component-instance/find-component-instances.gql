@@ -1,0 +1,6 @@
+mutation findComponentInstances($query: String) {
+    findComponentInstances (query: $query ) {
+      id,
+      data
+    }
+}
