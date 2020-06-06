@@ -1,0 +1,6 @@
+mutation findEntityInstances($query: String) {
+    findEntityInstances (query: $query) {
+      id,
+      name
+    }
+}

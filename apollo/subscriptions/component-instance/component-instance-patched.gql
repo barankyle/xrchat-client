@@ -1,6 +1,7 @@
 subscription {
   componentInstancePatched {
     id,
-    data
+    data,
+    entityId
   }
 }

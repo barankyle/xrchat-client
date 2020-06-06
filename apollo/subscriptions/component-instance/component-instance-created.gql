@@ -1,6 +1,7 @@
 subscription {
   componentInstanceCreated {
     id,
-    data
+    data,
+    entityId
   }
 }

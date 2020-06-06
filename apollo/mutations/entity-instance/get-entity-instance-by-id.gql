@@ -1,4 +1,4 @@
-mutation getEntityInstances($id: String!) {
+mutation getEntityInstance($id: String!) {
     getEntityInstance (id: $id ) {
       id,
       name

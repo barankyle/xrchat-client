@@ -1,6 +1,7 @@
 mutation getComponentInstances($id: String!) {
     getComponentInstance (id: $id ) {
       id,
-      data
+      data,
+      entityId
     }
 }
