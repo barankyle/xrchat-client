@@ -1,14 +1,14 @@
 import Layout from '../../../components/ui/Layout'
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic'
 const EcsyListenerExample = dynamic(() => import('../../../components/ecsy/listener-example'), {
-    ssr: false
+  ssr: false
 })
 
 const EcsyPage = () => {
   return (
-      <Layout pageTitle="Home">
-          <EcsyListenerExample/>
-      </Layout>
+    <Layout pageTitle="Home">
+      <EcsyListenerExample/>
+    </Layout>
   )
 }
 
