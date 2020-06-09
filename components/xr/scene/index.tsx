@@ -79,6 +79,9 @@ export default function RootScene(props: Props): any {
       }
       setSceneName(newSceneName)
     }
+
+    const player = document.querySelector('#player')
+    player.object3D.position.set(0, 1.6, 0)
   }
   // handle change page e.g. browser back button clicked
   function popStateHandler(e) {
