@@ -2,13 +2,18 @@ import { connect } from 'react-redux'
 import { selectDeviceDetectState } from '../../../redux/devicedetect/selector'
 
 import getConfig from 'next/config'
-const enterVRbuttonSrc = getConfig().publicRuntimeConfig.xr.enterVRbuttonSrc
+const config = getConfig().publicRuntimeConfig.xr.enterVRbutton
 
 function SvgVr(props) {
-  const CardboardIcon = () => {
+  const isDeviceDetected = props.detectedDevice.get('isDetected')
+  const deviceDetectedInfo = props.detectedDevice.get('content')
+  const deviceOS = deviceDetectedInfo.device.os.name
+  const isWebXRSupported = deviceDetectedInfo.WebXRSupported
+
+  const EntevVRIcon = (src) => {
     let icon
-    if (enterVRbuttonSrc !== '') {
-      icon = <img src={enterVRbuttonSrc}
+    if (src !== '') {
+      icon = <img src={src}
         style={ { zIndex: 99999, position: 'fixed', display: 'block', width: '6em', height: '4em' } }/>
     } else {
       icon = <svg viewBox="0 0 62.7 52.375" width="1em" height="1em" {...props}>
@@ -25,8 +30,26 @@ function SvgVr(props) {
     )
   }
 
+  const buttonType = () => {
+    let template = null
+    if (isDeviceDetected) {
+      if (deviceOS === 'iOS') {
+        template = EntevVRIcon(config.iOSsrc || config.src)
+      } else if (deviceOS === 'Android') {
+        template = EntevVRIcon(config.AndroidSrc || config.src)
+      } else if (deviceDetectedInfo.device.device.type === 'desktop') {
+        if (!isWebXRSupported) {
+          template = EntevVRIcon(config.noWebXRsrc || config.src)
+        } else {
+          template = EntevVRIcon(config.src)
+        }
+      }
+    }
+    return template
+  }
+
   return (
-    CardboardIcon()
+    buttonType()
   )
 }
 
