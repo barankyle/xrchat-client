@@ -5,7 +5,12 @@
     "loginDisabled": false,
     "logo": "./logo.svg",
     "xr": {
-      "enterVRbuttonSrc": "",
+      "enterVRbutton": {
+        "src": "",
+        "AndroidSrc": "",
+        "iOSsrc": "",
+        "noWebXRsrc": ""
+      },
       "networked-scene": {
         "app": "xrengine",
         "room": "lobby",
