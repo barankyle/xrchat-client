@@ -128,6 +128,8 @@ export const PlayerComponent: AFRAME.ComponentDefinition<Props> = {
     this.setControllers()
 
     this.el.object3D.position.set(this.el.object3D.position.x, this.data.playerHeight, this.el.object3D.position.z)
+
+    if (this.data.deviceType === 'smartphone') this.el.setAttribute('fuse-instructions', true)
   },
 
   setControllers() {
