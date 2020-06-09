@@ -1,11 +1,6 @@
 subscription {
   entityInstancePatched {
     id,
-    name,
-    position {
-      x,
-      y
-      z
-    }
+    name
   }
 }

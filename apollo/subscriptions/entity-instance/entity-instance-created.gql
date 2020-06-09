@@ -1,11 +1,6 @@
 subscription {
   entityInstanceCreated {
     id,
-    name,
-    position {
-      x,
-      y
-      z
-    }
+    name
   }
 }
