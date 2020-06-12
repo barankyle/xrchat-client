@@ -1,0 +1,5 @@
+mutation removeEntityInstance($id: String!) {
+    removeEntityInstance (id: $id) {
+      id
+    }
+}

@@ -1,6 +1,7 @@
 mutation patchEntityInstance ( $id: String!, $name: String) {
   patchEntityInstance(id: $id, name: $name) {
     id,
-    name
+    name,
+    userId
   }
 }

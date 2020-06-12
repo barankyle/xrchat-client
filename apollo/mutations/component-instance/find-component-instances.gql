@@ -2,6 +2,7 @@ mutation findComponentInstances($query: String) {
     findComponentInstances (query: $query ) {
       id,
       data,
-      entityId
+      entityId,
+      userId
     }
 }

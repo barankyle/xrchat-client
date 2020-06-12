@@ -1,6 +1,7 @@
 mutation getEntityInstance($id: String!) {
     getEntityInstance (id: $id ) {
       id,
-      name
+      name,
+      userId
     }
 }

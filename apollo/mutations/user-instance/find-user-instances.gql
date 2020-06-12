@@ -1,0 +1,6 @@
+mutation findUserInstances($query: String) {
+    findUserInstances (query: $query) {
+      id,
+      name
+    }
+}

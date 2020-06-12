@@ -1,0 +1,5 @@
+mutation removeComponentInstance($id: String!) {
+    removeComponentInstance (id: $id) {
+      id
+    }
+}

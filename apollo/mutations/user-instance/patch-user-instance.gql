@@ -1,11 +1,6 @@
 mutation patchUserInstance ( $id: String!, $name: String, $position: InstanceUserPositionInput) {
   patchUserInstance(id: $id, name: $name, position: $position) {
     id,
-    name,
-    position {
-      x,
-      y,
-      z
-    }
+    name
   }
 }

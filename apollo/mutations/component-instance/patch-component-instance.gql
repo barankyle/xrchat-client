@@ -2,6 +2,7 @@ mutation patchComponentInstance ( $id: String!, $data: String!, $entityId: Strin
   patchComponentInstance(id: $id, data: $data, entityId: $entityId) {
     id,
     data,
-    entityId
+    entityId,
+    userId
   }
 }
